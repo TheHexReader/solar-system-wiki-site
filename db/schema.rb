@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_114018) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_25_131001) do
+  create_table "astronomical_object_characteristics", force: :cascade do |t|
+    t.decimal "radius"
+    t.decimal "volume"
+    t.decimal "mass"
+    t.decimal "density"
+    t.decimal "gravity"
+    t.boolean "has_rings"
+    t.integer "status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "astronomical_object_designations", force: :cascade do |t|
+    t.string "designation"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "astronomical_objects", force: :cascade do |t|
     t.string "slug"
     t.string "name"
