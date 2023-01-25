@@ -75,3 +75,5 @@ group :test do
 end
 
 gem "slim-rails", "~> 3.5"
+
+gem "ancestry", "~> 4.2"

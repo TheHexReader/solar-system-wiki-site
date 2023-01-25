@@ -1,0 +1,2 @@
+class AstronomicalObjectDesignation < ApplicationRecord
+end
