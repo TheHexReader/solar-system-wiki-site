@@ -1,0 +1,33 @@
+Arguments: 
+  /home/hex/.fnm/node-versions/v16.16.0/installation/bin/node /home/hex/.node/corepack/yarn/1.22.15/bin/yarn.js add @hotwired/turbo-rails
+
+PATH: 
+  /usr/share/rvm/gems/ruby-3.2.0/bin:/usr/share/rvm/gems/ruby-3.2.0@global/bin:/usr/share/rvm/rubies/ruby-3.2.0/bin:/usr/share/rvm/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/hex/.local/state/fnm_multishells/451_1674627559510/bin:/home/hex/.fnm:/home/hex/.local/state/fnm_multishells/448_1674627559501/bin:/home/hex/.local/state/fnm_multishells/445_1674627559484/bin:/home/hex/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python311/Scripts:/mnt/c/Python311:/mnt/c/Python310/Scripts:/mnt/c/Python310:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/page:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/OpenSSH-Win64:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/git/v/.bin:/mnt/c/Users/Честных Всеволод/AppData/Local/Microsoft/WindowsApps:/mnt/c/tools/mysql/current/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA Community Edition 2021.3.2/bin:/mnt/c/Users/Честных Всеволод/AppData/Roaming/npm:/mnt/c/git/v:/mnt/c/Program Files/gs/gs9.56.1/bin:/mnt/c/Windows/System32:/mnt/c/Users/Честных Всеволод/.dotnet/tools:/mnt/c/Program Files/JetBrains/IntelliJ IDEA Community Edition 2022.2.2/bin:/snap/bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+npm manifest: 
+  {
+    "name": "app",
+    "private": "true",
+    "scripts": {
+      "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
