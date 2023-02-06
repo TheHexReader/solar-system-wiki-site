@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_25_131001) do
   create_table "astronomical_object_characteristics", force: :cascade do |t|
-    t.decimal "radius"
-    t.decimal "volume"
-    t.decimal "mass"
-    t.decimal "density"
-    t.decimal "gravity"
+    t.decimal "diameter", precision: 9, scale: 2
+    t.decimal "volume", precision: 21
+    t.decimal "mass", precision: 31
+    t.decimal "density", precision: 5, scale: 3
+    t.decimal "gravity", precision: 8, scale: 5
     t.boolean "has_rings"
-    t.integer "status_id"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_131001) do
   create_table "astronomical_objects", force: :cascade do |t|
     t.string "slug"
     t.string "name"
-    t.integer "characteristics_id"
+    t.integer "characteristic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"

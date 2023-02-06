@@ -1,11 +1,11 @@
 nav.navbar.navbar-expand-md.navbar-dark.bg-dark
   a.navbar-brand
-    .bg-light.rounded-circle
-      | 123
+    .bg-light.rounded-circle.text-dark
+      | img
   .container-fluid
     .collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-md-0
-        li.nav-item.text-light.p-1
-          | Homepage 
-        li.nav-item.text-light.p-1
-          | Planets
+        li.nav-item.text-light
+          = link_to 'Homepage', root_path, class: 'nav-link text-decoration-none' 
+        li.nav-item.text-light
+          = link_to 'Planets', planets_path, class: 'nav-link text-decoration-none'

@@ -3,7 +3,7 @@ class CreateAstronomicalObjects < ActiveRecord::Migration[7.0]
     create_table :astronomical_objects do |t|
       t.string :slug
       t.string :name
-      t.integer :characteristics_id
+      t.integer :characteristic
 
       t.timestamps
     end

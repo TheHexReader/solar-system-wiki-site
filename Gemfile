@@ -77,3 +77,5 @@ end
 gem "slim-rails", "~> 3.5"
 
 gem "ancestry", "~> 4.2"
+
+gem "sass-rails", "~> 6.0"
