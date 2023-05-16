@@ -3,40 +3,49 @@
 .wrapper
   #planet-carousel.carousel.slide[data-bs-ride="carousel"]
     .carousel-inner
-      .carousel-item.active[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill.bg-light
-          .d-flex.flex-row
-            = image_tag('mercury.png')
-            p
-              | Some random text that i can test with
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row
-            = image_tag('venus.png')
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row
-            = image_tag('earth.png')
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row  
-            = image_tag('mars.png')
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row
-            = image_tag('jupiter.png')
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row
-            = image_tag('saturn.png')
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row
-            = image_tag('uranus.png')
-      .carousel-item[data-bs-interval="9999999"]
-        .card.rounded-3.rounded-pill
-          .d-flex.flex-row
-            = image_tag('neptune.png')
+      - for planet in @planets
+        - if @planets.first == planet
+          .carousel-item.active[data-bs-interval="9999999"]
+            .card.rounded-pill.bg-light
+              .d-flex.flex-row
+                = link_to image_tag("#{planet.slug}.png", class: 'w-100'), planet_path(planet), class: ''
+                .w-50
+                  | #{planet.description_en}
+        - else
+          .carousel-item[data-bs-interval="9999999"]
+            .card.rounded-pill.bg-light
+              .d-flex.flex-row
+                = link_to image_tag("#{planet.slug}.png", class: 'w-100'), planet_path(planet), class: ''
+                .w-50
+                  | #{planet.description_en}
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row
+        /       = image_tag('venus.png')
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row
+        /       = image_tag('earth.png')
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row  
+        /       = image_tag('mars.png')
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row
+        /       = image_tag('jupiter.png')
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row
+        /       = image_tag('saturn.png')
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row
+        /       = image_tag('uranus.png')
+        / .carousel-item[data-bs-interval="9999999"]
+        /   .card.rounded-3.rounded-pill
+        /     .d-flex.flex-row
+        /       = image_tag('neptune.png')
     button.carousel-control-prev[type="button" data-bs-target="#planet-carousel" data-bs-slide="prev"]
       span.carousel-control-prev-icon[aria-hidden="true"]
       span.visually-hidden

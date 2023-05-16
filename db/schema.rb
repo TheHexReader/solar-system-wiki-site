@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_131001) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_15_132958) do
   create_table "astronomical_object_characteristics", force: :cascade do |t|
     t.decimal "diameter", precision: 9, scale: 2
     t.decimal "volume", precision: 21
@@ -25,19 +25,35 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_131001) do
 
   create_table "astronomical_object_designations", force: :cascade do |t|
     t.string "designation"
-    t.text "description"
+    t.text "description_en"
+    t.text "description_ru"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "astronomical_objects", force: :cascade do |t|
     t.string "slug"
-    t.string "name"
+    t.string "name_en"
+    t.string "name_ru"
+    t.text "description_en"
+    t.text "description_ru"
     t.integer "characteristic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
     t.index ["ancestry"], name: "index_astronomical_objects_on_ancestry"
+  end
+
+  create_table "historic_events", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_ru"
+    t.text "description_en"
+    t.text "description_ru"
+    t.integer "astronomical_object_id"
+    t.date "date_start"
+    t.date "date_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

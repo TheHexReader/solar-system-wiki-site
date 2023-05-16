@@ -1,0 +1,2 @@
+class HistoricEventsController < ApplicationController
+end

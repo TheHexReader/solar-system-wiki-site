@@ -1,6 +1,9 @@
 class PlanetsController < ApplicationController
   def index
-    @planets = AstronomicalObject.all
+    @planets = []
+    for planet in AstronomicalObjectCharacteristic.all.where(status: AstronomicalObjectDesignation.all.find_by(designation: 'planet').id)
+      @planets.append(planet.astronomical_object)
+    end
   end
 
   def show
