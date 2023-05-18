@@ -8,44 +8,17 @@
           .carousel-item.active[data-bs-interval="9999999"]
             .card.rounded-pill.bg-light
               .d-flex.flex-row
-                = link_to image_tag("#{planet.slug}.png", class: 'w-100'), planet_path(planet), class: ''
+                = link_to image_tag("planets/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
                 .w-50
-                  | #{planet.description_en}
+                  | #{planet["description_#{I18n.locale.downcase}"]}
         - else
           .carousel-item[data-bs-interval="9999999"]
             .card.rounded-pill.bg-light
               .d-flex.flex-row
-                = link_to image_tag("#{planet.slug}.png", class: 'w-100'), planet_path(planet), class: ''
+                = link_to image_tag("planets/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
                 .w-50
-                  | #{planet.description_en}
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row
-        /       = image_tag('venus.png')
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row
-        /       = image_tag('earth.png')
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row  
-        /       = image_tag('mars.png')
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row
-        /       = image_tag('jupiter.png')
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row
-        /       = image_tag('saturn.png')
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row
-        /       = image_tag('uranus.png')
-        / .carousel-item[data-bs-interval="9999999"]
-        /   .card.rounded-3.rounded-pill
-        /     .d-flex.flex-row
-        /       = image_tag('neptune.png')
+                  | #{planet["description_#{I18n.locale.downcase}"]}
+
     button.carousel-control-prev[type="button" data-bs-target="#planet-carousel" data-bs-slide="prev"]
       span.carousel-control-prev-icon[aria-hidden="true"]
       span.visually-hidden

@@ -1,6 +1,5 @@
 .card.m-5
   .card-header
-    h1 #{@planet.name_en}
+    h1 #{@planet["name_#{I18n.locale.downcase}"]}
   .card-body
-    p #{@planet.description_en}
-
+    p #{@planet["description_#{I18n.locale.downcase}"]}

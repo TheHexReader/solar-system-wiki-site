@@ -7,6 +7,6 @@ class PlanetsController < ApplicationController
   end
 
   def show
-    @planet = AstronomicalObject.find(params[:id])
+    @planet = AstronomicalObject.find_by(slug: params[:slug])
   end
 end
