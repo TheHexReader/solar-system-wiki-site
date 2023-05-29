@@ -2,8 +2,7 @@
 
 nav.navbar.navbar-expand-md.navbar-dark.bg-dark
   a.navbar-brand
-    .bg-light.rounded-circle.text-dark
-      | img
+    = link_to image_tag("icons/sun_navbar.png", style: "filter: invert(60%) sepia(95%) saturate(1335%) hue-rotate(359deg) brightness(101%) contrast(106%); width: 100%"), root_path, style: 'width: 50px; text-align: center;'
   .container-fluid
     .collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-md-0
@@ -12,6 +11,7 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark
         li.nav-item.text-light
           = link_to t('planets_page'), planets_path, class: 'nav-link text-decoration-none'
         li.nav-item.text-light
+          = link_to t('historic_events_page'), historic_events_path, class: 'nav-link text-decoration-none'
       .ms-auto.text-light.d-flex.align-items-center.btn.btn-dark.m-0.p-1[id="language-btn"]
         = image_tag("language_flags/#{I18n.locale.downcase}.png", style: 'height: 40px; width: 40px;')
         .ms-2

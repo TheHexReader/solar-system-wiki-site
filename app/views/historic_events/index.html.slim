@@ -1,0 +1,22 @@
+= stylesheet_link_tag "historic_events", "data-turbo-track": "reload"
+
+.m-5
+  .card.shadow.w-100.bg-dark.rounded-pill.ps-3.pe-3.pt-3.pb-1
+    h4.card-title
+      = search_form_for @q do |f|
+        .row.form-group.row-sm
+          .col-sm-9
+            = f.input "name_#{I18n.locale.downcase}_cont", label: false, placeholder: t('name'), input_html: { class: 'w-100 rounded-pill ps-3' }
+          .col-sm-3
+            = link_to t('reset'), url_for, class: 'btn btn-outline-primary w-100 rounded-pill'
+
+  - for historic_event in @historic_events
+    .card.text-white.bg-dark.rounded-pill.mt-3.mb-3
+      .row
+        .col-md-4.d-flex.justify-content-center.align-items-center
+          = link_to image_tag("planets/#{historic_event.astronomical_object.slug}.png", class: 'w-100 hover-big'), astronomical_objects_path(historic_event.astronomical_object)
+        .col-md-8.p-5.d-flex.flex-column.justify-content-center
+          h1
+            | #{historic_event["name_#{I18n.locale.downcase}"]}
+          p[style="text-align: justify;"]
+            | #{historic_event["description_#{I18n.locale.downcase}"]}

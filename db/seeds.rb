@@ -98,3 +98,14 @@ AstronomicalObject.create!(
   ),
   ancestry: AstronomicalObject.find_by(name_en: "The Sun").id
 )
+
+# Historic events
+
+HistoricEvent.create!(
+  name_en: 'First telescopic observation of Mercury',
+  name_ru: 'Первое телескопическое наблюдение Меркурия',
+  description_en: 'The first telescopic observation of Mercury was made by Galileo Galilei at the beginning of the 17th century. Although he observed the phases of Venus, his telescope was not powerful enough to observe the phases of Mercury. On November 7, 1631, Pierre Gassendi made the first telescopic observation of the passage of a planet across the solar disk. The moment of passage was calculated before by Johannes Kepler. In 1639, Giovanni Zupi discovered with a telescope that the orbital phases of Mercury are similar to those of the Moon and Venus. Observations have definitively demonstrated that Mercury revolves around the Sun.',
+  description_ru: 'Первое телескопическое наблюдение Меркурия было сделано Галилео Галилеем в начале XVII века. Хотя он наблюдал фазы Венеры, его телескоп не был достаточно мощным, чтобы наблюдать фазы Меркурия. 7 ноября 1631 года Пьер Гассенди сделал первое телескопическое наблюдение прохождения планеты по диску Солнца. Момент прохождения был вычислен до этого Иоганном Кеплером. В 1639 году Джованни Дзупи с помощью телескопа открыл, что орбитальные фазы Меркурия подобны фазам Луны и Венеры. Наблюдения окончательно продемонстрировали, что Меркурий обращается вокруг Солнца.',
+  astronomical_object_id: AstronomicalObject.find_by(name_en: "The Mercury").id,
+  date_start: '07.11.1631'
+)

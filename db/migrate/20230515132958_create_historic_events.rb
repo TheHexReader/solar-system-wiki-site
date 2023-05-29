@@ -9,8 +9,8 @@ class CreateHistoricEvents < ActiveRecord::Migration[7.0]
 
       t.integer :astronomical_object_id
 
-      t.date :date_start
-      t.date :date_end
+      t.date :date_start, null: true
+      t.date :date_end, null: true
       
       t.timestamps
     end

@@ -8,5 +8,6 @@ class PlanetsController < ApplicationController
 
   def show
     @planet = AstronomicalObject.find_by(slug: params[:slug])
+    @historic_events = @planet.historic_events
   end
 end

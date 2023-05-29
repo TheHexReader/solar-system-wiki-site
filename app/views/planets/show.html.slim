@@ -3,3 +3,20 @@
     h1 #{@planet["name_#{I18n.locale.downcase}"]}
   .card-body
     p #{@planet["description_#{I18n.locale.downcase}"]}
+
+.d-flex.justify-content-center.align-items-center
+  .card.w-50.bg-dark.text-light.rounded-pill.mt-5
+    h1.m-3.text-center
+      | #{t('historic_events')}
+
+.m-5
+  - for historic_event in @historic_events
+    .card.text-white.bg-dark.rounded-pill.mt-3.mb-3
+      .row
+        .col-md-4.d-flex.justify-content-center.align-items-center
+          = link_to image_tag("planets/#{historic_event.astronomical_object.slug}.png", class: 'w-100 hover-big'), astronomical_objects_path(historic_event.astronomical_object)
+        .col-md-8.p-5.d-flex.flex-column.justify-content-center
+          h1
+            | #{historic_event["name_#{I18n.locale.downcase}"]}
+          p[style="text-align: justify;"]
+            | #{historic_event["description_#{I18n.locale.downcase}"]}

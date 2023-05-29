@@ -79,3 +79,9 @@ gem "slim-rails", "~> 3.5"
 gem "ancestry", "~> 4.2"
 
 gem "sass-rails", "~> 6.0"
+
+gem "ransack", "~> 4.0"
+
+gem "simple_form", "~> 5.2"
+
+gem 'rails-erd', group: :development
