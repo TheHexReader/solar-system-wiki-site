@@ -85,3 +85,5 @@ gem "ransack", "~> 4.0"
 gem "simple_form", "~> 5.2"
 
 gem 'rails-erd', group: :development
+
+gem 'mysql2', group: :production
