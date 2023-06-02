@@ -21,8 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: mysql2
-  database: solar_system
-  host: 127.0.0.1
-  username: u2083251_default
-  password: wFLNjNwPw2Dm7y76
+  <<: *default
+  database: db/production.sqlite3
