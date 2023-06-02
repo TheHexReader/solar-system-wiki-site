@@ -14,7 +14,7 @@
     .card.text-white.bg-dark.rounded-pill.mt-3.mb-3
       .row
         .col-md-4.d-flex.justify-content-center.align-items-center
-          = link_to image_tag("planets/#{historic_event.astronomical_object.slug}.png", class: 'w-100 hover-big'), astronomical_objects_path(historic_event.astronomical_object)
+          = link_to image_tag("astronomical_objects_images/#{historic_event.astronomical_object.slug}.png", class: 'w-100 hover-big'), astronomical_objects_path(historic_event.astronomical_object)
         .col-md-8.p-5.d-flex.flex-column.justify-content-center
           h1
             | #{historic_event["name_#{I18n.locale.downcase}"]}

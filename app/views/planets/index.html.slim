@@ -8,14 +8,14 @@
           .carousel-item.active[data-bs-interval="9999999"]
             .card.rounded-pill.bg-light
               .d-flex.flex-row
-                = link_to image_tag("planets/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
+                = link_to image_tag("astronomical_objects_images/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
                 .w-50
                   | #{planet["description_#{I18n.locale.downcase}"]}
         - else
           .carousel-item[data-bs-interval="9999999"]
             .card.rounded-pill.bg-light
               .d-flex.flex-row
-                = link_to image_tag("planets/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
+                = link_to image_tag("astronomical_objects_images/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
                 .w-50
                   | #{planet["description_#{I18n.locale.downcase}"]}
 

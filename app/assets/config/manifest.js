@@ -2,5 +2,5 @@
 //= link_tree ../builds
 //= link planets_carousel.scss
 //= link planets_carousel.css
-//= link historic_events.css
+//= link hover_big.css
 //= link application.css
