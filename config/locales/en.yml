@@ -7,3 +7,12 @@ en:
   reset: Reset
   historic_events: Historic Events
   astronomical_objects: Astronomical Objects
+  diameter: "Diameter: %{kms} km."
+  volume: "Volume: %{kms} * 10⁹ km³."
+  mass: "Mass: %{kgs} * 10²¹ kg."
+  density: "Density: %{grms} g/sm³."
+  gravity: "Gravity: %{gs} m/s²."
+  has_rings_true: "Has rings: Yes"
+  has_rings_false: "Has rings: No"
+  welcome_header: Internet encyclopedia of Solar system astronomical objects
+  welcome_body: On this site you can see information about the main astronomical objects of the solar system

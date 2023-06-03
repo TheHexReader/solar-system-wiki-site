@@ -3,6 +3,13 @@
     h1 #{@planet["name_#{I18n.locale.downcase}"]}
   .card-body
     p #{@planet["description_#{I18n.locale.downcase}"]}
+    .d-flex.justify-content-center
+      h5.m-2 #{t('diameter', kms: @planet.characteristic.diameter)}
+      h5.m-2 #{t('volume', kms: @planet.characteristic.volume / 1000000000)}
+      h5.m-2 #{t('mass', kgs: @planet.characteristic.mass / 1000000000000000000000)}
+      h5.m-2 #{t('density', grms: @planet.characteristic.density)}
+      h5.m-2 #{t('gravity', gs: @planet.characteristic.gravity)}
+      h5.m-2 #{t("has_rings_#{@planet.characteristic.has_rings.to_s}")}
 
 .d-flex.justify-content-center.align-items-center
   .card.w-50.bg-dark.text-light.rounded-pill.mt-5

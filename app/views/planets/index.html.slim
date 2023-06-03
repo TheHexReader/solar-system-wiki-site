@@ -10,14 +10,52 @@
               .d-flex.flex-row
                 = link_to image_tag("astronomical_objects_images/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
                 .w-50
-                  | #{planet["description_#{I18n.locale.downcase}"]}
+                  .row
+                    .col
+                      h1.text-center
+                        | #{planet["name_#{I18n.locale.downcase}"]}
+                  .row.h-75
+                    .col
+                      .row.h4.pt-5.pb-5.ps-5
+                        | #{t('diameter', kms: planet.characteristic.diameter)}
+                      .row.h4.pt-5.pb-5.ps-5
+                        | #{t('volume', kms: planet.characteristic.volume / 1000000000)}
+                      .row.h4.pt-5.pb-5.ps-5
+                        | #{t('mass', kgs: planet.characteristic.mass / 1000000000000000000000)}
+                    .col
+                      .row.h4.pt-5.pb-5
+                        | #{t('density', grms: planet.characteristic.density)}
+                      .row.h4.pt-5.pb-5
+                        | #{t('gravity', gs: planet.characteristic.gravity)}
+                      .row.h4.pt-5.pb-5
+                        | #{t("has_rings_#{planet.characteristic.has_rings.to_s}")}
+
         - else
-          .carousel-item[data-bs-interval="9999999"]
-            .card.rounded-pill.bg-light
-              .d-flex.flex-row
-                = link_to image_tag("astronomical_objects_images/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
-                .w-50
-                  | #{planet["description_#{I18n.locale.downcase}"]}
+          -if !planet.nil?
+            .carousel-item[data-bs-interval="9999999"]
+              .card.rounded-pill.bg-light
+                .d-flex.flex-row
+                  = link_to image_tag("astronomical_objects_images/#{planet.slug}.png", class: 'w-100'), astronomical_objects_path(planet)
+                  .w-50
+                    .row
+                      .col
+                        h1.text-center
+                          | #{planet["name_#{I18n.locale.downcase}"]}
+                    .row.h-75
+                      .col
+                        .row.h4.pt-5.pb-5.ps-5
+                          | #{t('diameter', kms: planet.characteristic.diameter)}
+                        .row.h4.pt-5.pb-5.ps-5
+                          | #{t('volume', kms: planet.characteristic.volume / 1000000000)}
+                        .row.h4.pt-5.pb-5.ps-5
+                          | #{t('mass', kgs: planet.characteristic.mass / 1000000000000000000000)}
+                      .col
+                        .row.h4.pt-5.pb-5
+                          | #{t('density', grms: planet.characteristic.density)}
+                        .row.h4.pt-5.pb-5
+                          | #{t('gravity', gs: planet.characteristic.gravity)}
+                        .row.h4.pt-5.pb-5
+                          | #{t("has_rings_#{planet.characteristic.has_rings.to_s}")}
 
     button.carousel-control-prev[type="button" data-bs-target="#planet-carousel" data-bs-slide="prev"]
       span.carousel-control-prev-icon[aria-hidden="true"]

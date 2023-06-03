@@ -1,9 +1,11 @@
 = stylesheet_link_tag "hover_big", "data-turbo-track": "reload"
 
 .card.shadow.m-5
-  .card-body
-    h1
-      | Welcome!
+  .card-header
+    h2.text-center
+      | #{t('welcome_header')}
+  .card-body.text-center
+    | #{t('welcome_body')}
 
 .d-flex.justify-content-center.m-5
     .card.bg-dark.rounded-pill[style="width: 45%;"]
