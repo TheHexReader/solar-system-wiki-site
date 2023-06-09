@@ -80,8 +80,15 @@ gem "ancestry", "~> 4.2"
 
 gem "sass-rails", "~> 6.0"
 
-gem "ransack", "~> 4.0"
+gem "ransack", "~> 3.0"
 
 gem "simple_form", "~> 5.2"
 
 gem 'rails-erd', group: :development
+
+gem 'activeadmin', github: 'activeadmin/activeadmin', branch: 'master' # FIXME: revert to stable
+
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'

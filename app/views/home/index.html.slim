@@ -7,11 +7,6 @@
   .card-body.text-center
     | #{t('welcome_body')}
 
-.d-flex.justify-content-center.m-5
-    .card.bg-dark.rounded-pill[style="width: 45%;"]
-      h1.text-center.text-light.m-3
-        | #{t('astronomical_objects')}
-
 .m-5
   .row.d-flex.justify-content-center
     - for object in @astronomical_objects
